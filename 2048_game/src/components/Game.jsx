@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { moveLeft, moveRight, moveUp, moveDown, spawnNewTile } from './gamelogic';
+import { moveLeft, moveRight, moveUp, moveDown, spawnNewTile } from '../logic/gamelogic';
+import Board from './Board';
 
 const initialBoard = [
   [0,0,0,0],
@@ -72,21 +73,9 @@ export default function Game() {
   }, [board]);
 
   return (
-    <div>
-      {/* Render board here */}
-      {board.map((row, i) => (
-        <div key={i} style={{display:'flex'}}>
-          {row.map((val, j) => (
-            <div key={j} style={{
-              width: 60, height: 60, margin: 4, background: val ? '#eee' : '#ccc',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontWeight: 'bold', fontSize: 24
-            }}>
-              {val !== 0 ? val : ''}
-            </div>
-          ))}
-        </div>
-      ))}
+    <div className="flex justify-center items-center min-h-screen bg-zinc-900">
+      <Board board={board} />
     </div>
   );
 }
+           
