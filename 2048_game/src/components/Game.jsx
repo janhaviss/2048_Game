@@ -3,16 +3,15 @@ import { moveLeft, moveRight, moveUp, moveDown, spawnNewTile } from '../logic/ga
 import Board from './Board';
 
 const initialBoard = [
-  [0,0,0,0],
-  [0,0,0,0],
-  [0,0,0,0],
-  [0,0,0,0]
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0]
 ];
 
 export default function Game() {
   const [board, setBoard] = useState(spawnNewTile(spawnNewTile(initialBoard)));
 
-  // Update board after move and spawn new tile if board changed
   function makeMove(moveFunc) {
     const newBoard = moveFunc(board);
     if (JSON.stringify(newBoard) !== JSON.stringify(board)) {
@@ -20,10 +19,9 @@ export default function Game() {
     }
   }
 
-  // Keyboard arrow handler
   useEffect(() => {
     function handleKey(e) {
-      switch(e.key) {
+      switch (e.key) {
         case 'ArrowLeft': makeMove(moveLeft); break;
         case 'ArrowRight': makeMove(moveRight); break;
         case 'ArrowUp': makeMove(moveUp); break;
@@ -35,7 +33,6 @@ export default function Game() {
     return () => window.removeEventListener('keydown', handleKey);
   }, [board]);
 
-  // Swipe handling for mobile
   useEffect(() => {
     let touchStartX = 0;
     let touchStartY = 0;
@@ -53,11 +50,9 @@ export default function Game() {
       const diffY = touchEndY - touchStartY;
 
       if (Math.abs(diffX) > Math.abs(diffY)) {
-        // Horizontal swipe
         if (diffX > 30) makeMove(moveRight);
         else if (diffX < -30) makeMove(moveLeft);
       } else {
-        // Vertical swipe
         if (diffY > 30) makeMove(moveDown);
         else if (diffY < -30) makeMove(moveUp);
       }
@@ -73,8 +68,39 @@ export default function Game() {
   }, [board]);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-zinc-900">
-      <Board board={board} />
+    <div
+      style={{
+        padding: 20,
+        backgroundColor: '#222',  // slightly lighter dark background for board container
+        borderRadius: 12,
+        display: 'inline-block',
+        userSelect: 'none',       // disable text selection while playing
+      }}
+    >
+      {board.map((row, i) => (
+        <div key={i} style={{ display: 'flex' }}>
+          {row.map((val, j) => (
+            <div
+              key={j}
+              style={{
+                width: 60,
+                height: 60,
+                margin: 4,
+                background: val ? '#eee' : '#888',  // light tile if number, medium gray if zero
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontWeight: 'bold',
+                fontSize: 24,
+                color: '#000',  // black text on light tile
+                borderRadius: 8,
+              }}
+            >
+              {val !== 0 ? val : ''}
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
