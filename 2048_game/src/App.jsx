@@ -1,6 +1,6 @@
 import React from 'react';
-import Sidebar from './Slidebar';
-import Game from './Game';
+import Sidebar from './components/Slidebar';
+import Game from './components/Game';
 import './App.css'; 
 
 export default function App() {

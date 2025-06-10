@@ -1,0 +1,27 @@
+.game-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh; /* or 100vh if you want to center fully */
+}
+
+.game-container {
+  background-color: #27391C;
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.board-row {
+  display: flex;
+  gap: 8px;
+}
+

@@ -1,0 +1,75 @@
+.tile {
+  width: 64px;
+  height: 64px;
+  margin: 4px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+
+/* Base zero tile (empty) */
+.tile-0 {
+  background-color: #888888;
+  color: transparent;
+}
+
+/* Numbered tiles with colors */
+.tile-2 {
+  background-color: #E0FBE2;
+  color: #3c3c3c;
+}
+
+.tile-4 {
+  background-color: #B0EBB4;
+  color: #3c3c3c;
+}
+
+.tile-8 {
+  background-color: #95D2B3;
+  color: #3c3c3c;
+}
+
+.tile-16 {
+  background-color: #55AD9B;
+  color: white;
+}
+
+.tile-32 {
+  background-color: #80BCBD;
+  color: white;
+}
+
+.tile-64 {
+  background-color: #75A47F;
+  color: white;
+}
+
+.tile-128 {
+  background-color: #638889;
+  color: white;
+}
+
+.tile-256 {
+  background-color: #618264;
+  color: white;
+}
+
+.tile-512 {
+  background-color: #1F7D53;
+  color: white;
+}
+
+.tile-1024 {
+  background-color: #255F38;
+  color: white;
+}
+
+.tile-2048 {
+  background-color: #ffeb3b;
+  color: #006A67;
+}

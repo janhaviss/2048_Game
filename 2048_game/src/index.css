@@ -4,7 +4,7 @@ body {
   color: #333;
 }
 
-.board {
+/* .board {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -21,4 +21,4 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-}
+} */

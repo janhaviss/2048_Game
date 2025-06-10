@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './sidebar.css';
+import '../css/sidebar.css';
 import { FaBars, FaTimes, FaCog, FaGamepad, FaInfoCircle } from 'react-icons/fa';
 
 const menuItems = [
