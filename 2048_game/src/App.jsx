@@ -9,6 +9,9 @@ export default function App() {
       <Sidebar />
       <div className="main-content">
         <h1>Welcome to 2048!</h1>
+        <h4 className="intro-text">
+  Combine the numbered tiles by swiping or using your arrow keys. Reach 2048 to win — but how far can you really go?
+</h4>
         <Game />
       </div>
     </div>

@@ -20,3 +20,13 @@
   color: #3c5f41;
   text-align: center;
 }
+
+.intro-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #3e5f3d;
+  /* max-width: 500px; */
+  line-height: 1.6;
+  text-align: center;
+}
+

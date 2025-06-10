@@ -36,40 +36,40 @@
 
 .tile-16 {
   background-color: #55AD9B;
-  color: white;
+  color: #3c3c3c;
 }
 
 .tile-32 {
   background-color: #80BCBD;
-  color: white;
+  color: #3c3c3c;
 }
 
 .tile-64 {
   background-color: #75A47F;
-  color: white;
+  color: #3c3c3c;
 }
 
 .tile-128 {
   background-color: #638889;
-  color: white;
+  color: #3c3c3c;
 }
 
 .tile-256 {
   background-color: #618264;
-  color: white;
+  color: #3c3c3c;
 }
 
 .tile-512 {
   background-color: #1F7D53;
-  color: white;
+  color: #3c3c3c;
 }
 
 .tile-1024 {
   background-color: #255F38;
-  color: white;
+  color: #3c3c3c;
 }
 
 .tile-2048 {
-  background-color: #ffeb3b;
-  color: #006A67;
+  background-color: #006A67;
+  color: #3c3c3c;
 }
