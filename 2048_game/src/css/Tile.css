@@ -20,17 +20,17 @@
 
 /* Numbered tiles with colors */
 .tile-2 {
-  background-color: #E0FBE2;
+  background-color: #b9f5bd;
   color: #3c3c3c;
 }
 
 .tile-4 {
-  background-color: #B0EBB4;
+  background-color: #9ceca1;
   color: #3c3c3c;
 }
 
 .tile-8 {
-  background-color: #95D2B3;
+  background-color: #82d4ab;
   color: #3c3c3c;
 }
 
@@ -45,12 +45,12 @@
 }
 
 .tile-64 {
-  background-color: #75A47F;
+  background-color: #7ca885;
   color: #3c3c3c;
 }
 
 .tile-128 {
-  background-color: #638889;
+  background-color: #628d6c;
   color: #3c3c3c;
 }
 
