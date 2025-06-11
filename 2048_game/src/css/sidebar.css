@@ -67,3 +67,104 @@
   color: #2e5724;
   font-size: 1.2rem;
 }
+
+/* PINK THEME */
+
+.pink .sidebar {
+  background-color: #F8C8DC;
+  color: #3e1f2a;
+  border-right: 1px solid #e8a6c3;
+}
+
+.pink .sidebar-header h1 {
+  color: #722f37;
+}
+
+.pink .toggle-button {
+  color: #722f37;
+}
+
+.pink .toggle-button:hover {
+  color: #4b1f28;
+}
+
+.pink .nav-links a {
+  color: #5b2230;
+}
+
+.pink .nav-links a:hover {
+  background-color: #fadbe9;
+}
+
+.pink .nav-icon {
+  color: #a14065;
+}
+
+
+/* BLUE THEME */
+
+.blue .sidebar {
+  background-color: #8dd8f1;
+  color: #3e1f2a;
+  border-right: 1px solid #000B58;
+}
+
+.blue .sidebar-header h1 {
+  color: #000B58;
+}
+
+.blue .toggle-button {
+  color: #000B58;
+}
+
+.blue .toggle-button:hover {
+  color: #000B58;
+}
+
+.blue .nav-links a {
+  color: #000B58;
+}
+
+.blue .nav-links a:hover {
+  background-color: #add8e6;
+}
+
+.blue .nav-icon {
+  color: #000B58;
+}
+
+
+/* SWTACH BUTTONS */
+.theme-circles {
+  display: flex;
+  gap: 12px;
+  margin-left: 1rem;
+  align-items: center;
+}
+
+.theme-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1);
+  border-color: #888;
+}
+
+/* Color-specific classes */
+.theme-btn.green {
+  background-color: #3c5f41;
+}
+
+.theme-btn.pink {
+  background-color: #a4456f;
+}
+
+.theme-btn.blue {
+  background-color: #000B58;
+}

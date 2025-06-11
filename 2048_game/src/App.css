@@ -47,3 +47,60 @@
   background-color: #388e3c;
 }
 
+
+/* PINK THEME */
+.pink.app-container {
+  background: linear-gradient(to right, #ffe0f0, #fbd3e9);
+  color: #4d2a35;
+}
+
+.pink .main-content {
+  background-color: #fbd3e9;
+}
+
+.pink .main-content h1 {
+  color: #a4456f;
+}
+
+.pink .intro-text {
+  color: #91345e;
+}
+
+.pink .restart-btn {
+  background-color: #a4456f;
+  color: white;
+}
+
+.pink .restart-btn:hover {
+  background-color: #892d58;
+}
+
+
+
+/* BLUE THEME */
+.blue .app-container {
+  background: linear-gradient(to right, #ffe0f0, #fbd3e9);
+  color: #4d2a35;
+}
+
+.blue .main-content {
+  background-color: #add8e6;
+}
+
+.blue .main-content h1 {
+  color: #000B58;
+}
+
+.blue .intro-text {
+  color: #000B58;
+}
+
+.blue .restart-btn {
+  background-color: #000B58;
+  color: white;
+}
+
+.blue .restart-btn:hover {
+  background-color: #3c4271;
+}
+

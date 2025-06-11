@@ -3,7 +3,7 @@ import { moveLeft, moveRight, moveUp, moveDown, spawnNewTile, isGameOver } from 
 import Board from './Board';
 import '../css/Game.css';
 
-export default function Game({ score, setScore, setGameOver,setMoveCount }) {
+export default function Game({ score, setScore, setGameOver,setMoveCount, tileTheme }) {
   const createInitialBoard = () => spawnNewTile(spawnNewTile([
     [0, 0, 0, 0],
     [0, 0, 0, 0],
@@ -69,8 +69,8 @@ export default function Game({ score, setScore, setGameOver,setMoveCount }) {
   }, [board]);
 
   return (
-    <div className="game-wrapper">
-      <div className="game-container">
+<div className={`game-wrapper ${tileTheme}`}>      
+  <div className="game-container">
         <Board board={board} />
       </div>
     </div>

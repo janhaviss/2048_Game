@@ -34,3 +34,31 @@
 .restart-btn:hover {
   background-color: #2c4830;
 }
+
+/* PINK THEME */
+.pink .gameover-box {
+  background-color: #f5c2da;
+}
+
+.pink .restart-btn {
+  background-color: #fff0f6;
+  color: #a03b6d;
+}
+
+.pink .restart-btn:hover {
+  background-color: #ffb3d1;
+}
+
+/* BLUE THEME */
+.blue .gameover-box {
+  background-color: #8dd8f1;
+}
+
+.blue .restart-btn {
+  background-color: #000B58;
+  color: #fff;
+}
+
+.blue .restart-btn:hover {
+  background-color: #011080;
+}

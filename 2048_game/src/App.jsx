@@ -13,7 +13,14 @@ export default function App() {
 
   const [gameOver, setGameOver] = useState(false);
   const [gameKey, setGameKey] = useState(0);
-    const [moveCount, setMoveCount] = useState(0); 
+  const [moveCount, setMoveCount] = useState(0); 
+  const [tileTheme, setTileTheme] = useState(() => {
+    return localStorage.getItem('tileTheme') || 'green';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('tileTheme', tileTheme);
+  }, [tileTheme]);
 
 
 
@@ -36,8 +43,8 @@ export default function App() {
 
 
   return (
-    <div className="app-container">
-      <Sidebar />
+    <div className={`app-container ${tileTheme}`}>
+      <Sidebar setTileTheme={setTileTheme} />
       <div className="main-content">
         <h1>Welcome to 2048!</h1>
         <h4 className="intro-text">
@@ -48,6 +55,11 @@ export default function App() {
           <div className="score-item">High Score: {highScore}</div>
           <div className="score-item">Moves: {moveCount}</div>
           <button className="restart-btn" onClick={handleRestart}>Restart</button>
+        <div className="theme-circles">
+  <button className="theme-btn green" onClick={() => setTileTheme('green')} />
+  <button className="theme-btn pink" onClick={() => setTileTheme('pink')} />
+  <button className="theme-btn blue" onClick={() => setTileTheme('blue')} />
+</div>
         </div>
 
         <Game 
@@ -56,6 +68,7 @@ export default function App() {
           setScore={setScore} 
           setGameOver={setGameOver} 
           setMoveCount={setMoveCount}
+          tileTheme={tileTheme}
 
         />
 

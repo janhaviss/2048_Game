@@ -8,7 +8,8 @@ const menuItems = [
   { name: 'Settings', link: '/settings', icon: <FaCog /> },
 ];
 
-const Sidebar = () => {
+
+const Sidebar = ({ setTileTheme }) => {
   const [open, setOpen] = useState(true);
 
   return (
@@ -27,6 +28,27 @@ const Sidebar = () => {
             {open && <span>{item.name}</span>}
           </a>
         ))}
+      {/* <ul className="theme-selector">
+  <li>
+    <button onClick={() => setTileTheme('green')} className="theme-btn">
+      <span className="swatch" style={{ backgroundColor: "#B0DB9C" }}></span>
+      Green Theme
+    </button>
+  </li>
+  <li>
+    <button onClick={() => setTileTheme('pink')} className="theme-btn">
+      <span className="swatch" style={{ backgroundColor: "#fbd3e9" }}></span>
+      Pink Theme
+    </button>
+  </li>
+  <li>
+    <button onClick={() => setTileTheme('blue')} className="theme-btn">
+      <span className="swatch" style={{ backgroundColor: "#ADD8E6" }}></span>
+      Blue Theme
+    </button>
+  </li>
+</ul> */}
+
       </nav>
     </div>
   );
