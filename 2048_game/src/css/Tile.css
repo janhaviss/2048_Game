@@ -20,56 +20,56 @@
 
 /* Numbered tiles with colors */
 .tile-2 {
-  background-color: #E0FBE2;
+  background-color: #b9f5bd;
   color: #3c3c3c;
 }
 
 .tile-4 {
-  background-color: #B0EBB4;
+  background-color: #9ceca1;
   color: #3c3c3c;
 }
 
 .tile-8 {
-  background-color: #95D2B3;
+  background-color: #82d4ab;
   color: #3c3c3c;
 }
 
 .tile-16 {
   background-color: #55AD9B;
-  color: white;
+  color: #3c3c3c;
 }
 
 .tile-32 {
   background-color: #80BCBD;
-  color: white;
+  color: #3c3c3c;
 }
 
 .tile-64 {
-  background-color: #75A47F;
-  color: white;
+  background-color: #7ca885;
+  color: #3c3c3c;
 }
 
 .tile-128 {
-  background-color: #638889;
-  color: white;
+  background-color: #628d6c;
+  color: #3c3c3c;
 }
 
 .tile-256 {
   background-color: #618264;
-  color: white;
+  color: #3c3c3c;
 }
 
 .tile-512 {
   background-color: #1F7D53;
-  color: white;
+  color: #3c3c3c;
 }
 
 .tile-1024 {
   background-color: #255F38;
-  color: white;
+  color: #3c3c3c;
 }
 
 .tile-2048 {
-  background-color: #ffeb3b;
-  color: #006A67;
+  background-color: #006A67;
+  color: #3c3c3c;
 }

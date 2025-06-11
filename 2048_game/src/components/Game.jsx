@@ -1,62 +1,63 @@
 import React, { useState, useEffect } from 'react';
-import { moveLeft, moveRight, moveUp, moveDown, spawnNewTile } from '../logic/gamelogic';
+import { moveLeft, moveRight, moveUp, moveDown, spawnNewTile, isGameOver } from '../logic/gamelogic';
 import Board from './Board';
 import '../css/Game.css';
 
-const initialBoard = [
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-  [0, 0, 0, 0]
-];
+export default function Game({ score, setScore, setGameOver,setMoveCount }) {
+  const createInitialBoard = () => spawnNewTile(spawnNewTile([
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0]
+  ]));
 
-export default function Game() {
-  const [board, setBoard] = useState(spawnNewTile(spawnNewTile(initialBoard)));
+  const [board, setBoard] = useState(createInitialBoard);
 
   function makeMove(moveFunc) {
-    const newBoard = moveFunc(board);
+    const { board: newBoard, score: gained } = moveFunc(board);
     if (JSON.stringify(newBoard) !== JSON.stringify(board)) {
-      setBoard(spawnNewTile(newBoard));
+      const newSpawned = spawnNewTile(newBoard);
+      setBoard(newSpawned);
+      setScore(prev => prev + gained);
+      setMoveCount(prev => prev + 1); // 🆕 increment move count
+      if (isGameOver(newSpawned)) setGameOver(true);
     }
   }
 
+  // Keyboard input
   useEffect(() => {
     const handleKey = (e) => {
-      switch (e.key) {
-        case 'ArrowLeft': makeMove(moveLeft); break;
-        case 'ArrowRight': makeMove(moveRight); break;
-        case 'ArrowUp': makeMove(moveUp); break;
-        case 'ArrowDown': makeMove(moveDown); break;
-        default: break;
-      }
+      if (e.key === 'ArrowLeft') makeMove(moveLeft);
+      else if (e.key === 'ArrowRight') makeMove(moveRight);
+      else if (e.key === 'ArrowUp') makeMove(moveUp);
+      else if (e.key === 'ArrowDown') makeMove(moveDown);
     };
 
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
   }, [board]);
 
+  // Touch input
   useEffect(() => {
     let startX = 0, startY = 0;
 
-    function handleTouchStart(e) {
+    const handleTouchStart = (e) => {
       startX = e.touches[0].clientX;
       startY = e.touches[0].clientY;
-    }
+    };
 
-    function handleTouchEnd(e) {
+    const handleTouchEnd = (e) => {
       const endX = e.changedTouches[0].clientX;
       const endY = e.changedTouches[0].clientY;
       const dx = endX - startX;
       const dy = endY - startY;
 
       if (Math.abs(dx) > Math.abs(dy)) {
-        if (dx > 30) makeMove(moveRight);
-        else if (dx < -30) makeMove(moveLeft);
+        dx > 30 ? makeMove(moveRight) : dx < -30 && makeMove(moveLeft);
       } else {
-        if (dy > 30) makeMove(moveDown);
-        else if (dy < -30) makeMove(moveUp);
+        dy > 30 ? makeMove(moveDown) : dy < -30 && makeMove(moveUp);
       }
-    }
+    };
 
     window.addEventListener('touchstart', handleTouchStart);
     window.addEventListener('touchend', handleTouchEnd);
@@ -68,11 +69,10 @@ export default function Game() {
   }, [board]);
 
   return (
-  <div className="game-wrapper">
-    <div className="game-container">
-      <Board board={board} />
+    <div className="game-wrapper">
+      <div className="game-container">
+        <Board board={board} />
+      </div>
     </div>
-  </div>
-);
-
+  );
 }
