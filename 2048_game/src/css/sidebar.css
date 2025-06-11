@@ -1,13 +1,12 @@
+/* === Sidebar === */
 .sidebar {
-  height: 100vh;
-  width: 250px;
   background-color: #B0DB9C;
-  color: #2e3d27;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-  transition: width 0.3s ease-in-out;
-  border-right: 1px solid #A5C989;
+  width: 250px;
+  transition: width 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  padding: 1rem;
 }
 
 .sidebar.collapsed {
@@ -16,56 +15,98 @@
 
 .sidebar-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 16px;
-  border-bottom: 1px solid #A5C989;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  animation: slideIn 0.5s ease;
 }
 
-.sidebar-header h1 {
-  font-size: 1.25rem;
-  color: #2e5724;
+.sidebar h1 {
+  font-size: 1.5rem;
+  color: #2d572c;
+  transition: opacity 0.3s ease;
 }
 
 .toggle-button {
   background: none;
   border: none;
-  color: #2e5724;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  transition: color 0.2s;
+  color: #2d572c;
+  transition: transform 0.2s ease;
 }
 
 .toggle-button:hover {
-  color: #173d14;
+  transform: rotate(90deg);
 }
 
 .nav-links {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 16px;
+  gap: 1rem;
 }
 
 .nav-links a {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  color: #1d2a1b;
+  gap: 1rem;
   text-decoration: none;
-  transition: background-color 0.3s;
+  color: #2d572c;
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
 }
 
 .nav-links a:hover {
-  background-color: #DDF6D2;
+  background-color: #CAE8BD;
 }
 
 .nav-icon {
-  color: #2e5724;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+}
+
+/* === Game UI === */
+.score-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.score-item {
+  background-color: #DDF6D2;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.restart-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #B0DB9C;
+  border: none;
+  border-radius: 8px;
+  color: #2d572c;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.restart-btn:hover {
+  background-color: #A3CE8C;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 /* PINK THEME */

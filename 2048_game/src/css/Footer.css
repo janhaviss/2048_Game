@@ -1,0 +1,29 @@
+.footer {
+  background-color: #ECFAE5;
+  color: #3b3b3b;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 2px solid #B0DB9C;
+  margin-top: 3rem;
+  animation: fadeInUp 1s ease-in-out;
+  font-family: 'Segoe UI', sans-serif;
+  
+}
+
+.footer span {
+  color: #80b878;
+  font-weight: 600;
+}
+
+/* Simple fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
