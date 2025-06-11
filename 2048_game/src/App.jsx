@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidebar from './components/Slidebar';
 import Game from './components/Game';
 import GameOver from './components/Gameover';
@@ -21,9 +21,12 @@ export default function App() {
     return localStorage.getItem('tileTheme') || 'green';
   });
 
-  useEffect(() => {
-    localStorage.setItem('tileTheme', tileTheme);
-  }, [tileTheme]);
+ useEffect(() => {
+  if (!localStorage.getItem('tileTheme')) {
+    localStorage.setItem('tileTheme', 'green');
+  }
+}, []);
+
 
   const handleRestart = () => {
     const confirmed = window.confirm("Are you sure you want to restart the game?");
@@ -50,11 +53,7 @@ export default function App() {
           <div className="score-item">High Score: {highScore}</div>
           <div className="score-item">Moves: {moveCount}</div>
           <button className="restart-btn" onClick={handleRestart}>Restart</button>
-        <div className="theme-circles">
-  <button className="theme-btn green" onClick={() => setTileTheme('green')} />
-  <button className="theme-btn pink" onClick={() => setTileTheme('pink')} />
-  <button className="theme-btn blue" onClick={() => setTileTheme('blue')} />
-</div>
+       
         </div>
 
         <Game 
@@ -72,7 +71,14 @@ export default function App() {
         ) : activePage === 'howToPlay' ? (
           <HowToPlay />
         ) : (
-          <div>Settings Coming Soon</div>
+          <div>
+            <h3>Change Game theme :</h3>
+             <div className="theme-circles">
+  <button className="theme-btn green" onClick={() => setTileTheme('green')} />
+  <button className="theme-btn pink" onClick={() => setTileTheme('pink')} />
+  <button className="theme-btn blue" onClick={() => setTileTheme('blue')} />
+</div>
+          </div>
         )}
 
         <Footer />
