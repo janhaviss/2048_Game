@@ -1,4 +1,11 @@
-/* DEFAULT GREEN THEME */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;}  /* This hides the scrollbar */
+ 
+
+
 .app-container {
   display: flex;
   height: 100vh;
