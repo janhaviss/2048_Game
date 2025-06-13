@@ -1,15 +1,4 @@
-<<<<<<< HEAD
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;}  /* This hides the scrollbar */
- 
-
-
-=======
 /* DEFAULT GREEN THEME */
->>>>>>> 98588df41d9173000943470374a0a9aa06d68194
 .app-container {
   display: flex;
   height: 100vh;
@@ -148,4 +137,15 @@ html, body {
   margin-left: 12px;
   transition: background-color 0.2s ease;
   margin-bottom: 14px;
+}
+
+/* SOUND SETTING BUTTON */
+button {
+  padding: 8px 12px;
+  background-color: #b0db9c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 0.5rem;
 }

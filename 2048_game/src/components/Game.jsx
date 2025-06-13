@@ -3,7 +3,7 @@ import { moveLeft, moveRight, moveUp, moveDown, spawnNewTile, isGameOver } from 
 import Board from './Board';
 import '../css/Game.css';
 
-export default function Game({ score, setScore, setGameOver,setMoveCount, tileTheme,hardMode }) {
+export default function Game({ score, setScore, setGameOver,setMoveCount, tileTheme,hardMode, soundEnabled  }) {
  const createInitialBoard = () => 
   spawnNewTile(spawnNewTile([
     [0, 0, 0, 0],
@@ -15,18 +15,27 @@ export default function Game({ score, setScore, setGameOver,setMoveCount, tileTh
 
   const [board, setBoard] = useState(createInitialBoard);
 
-  function makeMove(moveFunc) {
-    const { board: newBoard, score: gained } = moveFunc(board);
-    const newSpawned = spawnNewTile(newBoard, hardMode);
+  function playSound(name) {
+  if (!soundEnabled) return;
+  const audio = new Audio(`/sounds/${name}.wav`);
+  audio.play();
+}
 
-    if (JSON.stringify(newBoard) !== JSON.stringify(board)) {
-      const newSpawned = spawnNewTile(newBoard);
-      setBoard(newSpawned);
-      setScore(prev => prev + gained);
-      setMoveCount(prev => prev + 1); // 🆕 increment move count
-      if (isGameOver(newSpawned)) setGameOver(true);
+function makeMove(moveFunc) {
+  const { board: newBoard, score: gained } = moveFunc(board);
+  if (JSON.stringify(newBoard) !== JSON.stringify(board)) {
+    const newSpawned = spawnNewTile(newBoard);
+    setBoard(newSpawned);
+    setScore(prev => prev + gained);
+    setMoveCount(prev => prev + 1);
+    playSound('move'); // 🔊
+    if (isGameOver(newSpawned)) {
+      setGameOver(true);
+      playSound('gameover'); // 🔊
     }
   }
+}
+
 
   // Keyboard input
   useEffect(() => {

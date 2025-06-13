@@ -11,23 +11,33 @@ export default function App() {
 
   // Score
   const [score, setScore] = useState(0);
+
   //HighScore
   const [highScore, setHighScore] = useState(() => {
   const saved = localStorage.getItem('highScore');
     return saved ? parseInt(saved, 10) : 0;
   });
+
   //Game over
   const [gameOver, setGameOver] = useState(false);
+
   //Game key
   const [gameKey, setGameKey] = useState(0);
+
   //Move
   const [moveCount, setMoveCount] = useState(0); 
+
   //Theme
   const [tileTheme, setTileTheme] = useState(() => {
     return localStorage.getItem('tileTheme') || 'green';
   });
+
   //Hard Mode
   const [hardMode, setHardMode] = useState(false);
+
+  //sound settings
+  const [soundEnabled, setSoundEnabled] = useState(true);
+
 
 
 // For Tile theme 
@@ -37,6 +47,7 @@ export default function App() {
   }
 }, []);
 
+
 // For Highscore 
 useEffect(() => {
   if (score > highScore) {
@@ -44,6 +55,7 @@ useEffect(() => {
     localStorage.setItem('highScore', score);
   }
 }, [score, highScore]);
+
 
 // for reseting highscore
 const resetHighScore = () => {
@@ -75,6 +87,11 @@ const resetHighScore = () => {
           <div className="score-item">High Score: {highScore}</div>
           <div className="score-item">Moves: {moveCount}</div>
           <button className="restart-btn" onClick={handleRestart}>Restart</button>
+          <div style={{ marginTop: '1rem' }}>
+          <button onClick={() => setSoundEnabled(prev => !prev)}>
+            {soundEnabled ? '🔊 Sound On' : '🔇 Sound Off'}
+          </button>
+          </div>
        
         </div>
 
@@ -86,6 +103,8 @@ const resetHighScore = () => {
           setMoveCount={setMoveCount}
           tileTheme={tileTheme}
           hardMode={hardMode}
+          soundEnabled={soundEnabled}
+
 
         />
 
