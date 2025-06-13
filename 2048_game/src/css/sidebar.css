@@ -1,7 +1,7 @@
 /* === Sidebar === */
 .sidebar {
   background-color: #B0DB9C;
-  width: 250px;
+  width: 170px;
   transition: width 0.3s ease;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -10,7 +10,7 @@
 }
 
 .sidebar.collapsed {
-  width: 80px;
+  width: 40px;
 }
 
 .sidebar-header {

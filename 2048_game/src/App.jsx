@@ -4,6 +4,7 @@ import Game from './components/Game';
 import GameOver from './components/Gameover';
 import HowToPlay from './components/HowToPlay';
 import Footer from './components/Footer';
+import Settings from './components/Settings';
 import './App.css';
 
 export default function App() {
@@ -93,23 +94,14 @@ const resetHighScore = () => {
         </>
         ) : activePage === 'howToPlay' ? (
           <HowToPlay />
-        ) : (
-          <div className='settingsDiv'>
-            <h3>Change Game Color theme :</h3>
-             <div className="theme-circles">
-              <button className="theme-btn green" onClick={() => setTileTheme('green')} />
-              <button className="theme-btn pink" onClick={() => setTileTheme('pink')} />
-              <button className="theme-btn blue" onClick={() => setTileTheme('blue')} />
-            </div>
-            <h3>Reset High Score</h3>
-            <button className="resetbtn" onClick={resetHighScore}>Reset High Score</button>
-
-            <h3>Change Game mode</h3>
-            <button className="hardmodebtn" onClick={() => setHardMode(prev => !prev)}>
-              {hardMode ? 'Normal Mode' : 'Hard Mode'}
-            </button>
-
-          </div>
+        ) :  (
+          <Settings
+            tileTheme={tileTheme}
+            setTileTheme={setTileTheme}
+            resetHighScore={resetHighScore}
+            hardMode={hardMode}
+            setHardMode={setHardMode}
+          />
         )}
 
         <Footer />

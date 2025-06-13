@@ -3,29 +3,16 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 92.7%;
+  width: 95.3%;
   background-color: #b0db9c;
   color: #2e3d27;
   text-align: center;
-<<<<<<< HEAD
   padding: 1px 0;
   font-size: 0.7rem;
   box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
   z-index: 10;
 }
 
-
-=======
-  padding: 1rem;
-  font-size: 0.9rem;
-  border-top: 2px solid #B0DB9C;
-  margin-top: 3rem;
-  animation: fadeInUp 1s ease-in-out;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* Span text inside footer */
->>>>>>> 98588df41d9173000943470374a0a9aa06d68194
 .footer span {
   color: #80b878; /* Default for green theme */
   font-weight: 600;
