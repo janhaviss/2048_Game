@@ -1,3 +1,4 @@
+/* Base footer styling */
 .footer {
   background-color: #ECFAE5;
   color: #3b3b3b;
@@ -8,19 +9,39 @@
   margin-top: 3rem;
   animation: fadeInUp 1s ease-in-out;
   font-family: 'Segoe UI', sans-serif;
-  
 }
 
+/* Span text inside footer */
 .footer span {
-  color: #80b878;
+  color: #80b878; /* Default for green theme */
   font-weight: 600;
 }
 
-/* Simple fade-in animation */
+/* PINK THEME OVERRIDES */
+.pink .footer {
+  background-color: #ffe6f5;
+  border-top-color: #f7c1e8;
+}
+
+.pink .footer span {
+  color: #d672b6;
+}
+
+/* BLUE THEME OVERRIDES */
+.blue .footer {
+  background-color: #e4f3ff;
+  border-top-color: #a6d4f2;
+}
+
+.blue .footer span {
+  color: #5297d1;
+}
+
+/* Optional: subtle animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;

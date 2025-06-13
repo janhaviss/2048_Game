@@ -3,18 +3,22 @@ import { moveLeft, moveRight, moveUp, moveDown, spawnNewTile, isGameOver } from 
 import Board from './Board';
 import '../css/Game.css';
 
-export default function Game({ score, setScore, setGameOver,setMoveCount, tileTheme }) {
-  const createInitialBoard = () => spawnNewTile(spawnNewTile([
+export default function Game({ score, setScore, setGameOver,setMoveCount, tileTheme,hardMode }) {
+ const createInitialBoard = () => 
+  spawnNewTile(spawnNewTile([
     [0, 0, 0, 0],
     [0, 0, 0, 0],
     [0, 0, 0, 0],
     [0, 0, 0, 0]
-  ]));
+  ]), hardMode);
+
 
   const [board, setBoard] = useState(createInitialBoard);
 
   function makeMove(moveFunc) {
     const { board: newBoard, score: gained } = moveFunc(board);
+    const newSpawned = spawnNewTile(newBoard, hardMode);
+
     if (JSON.stringify(newBoard) !== JSON.stringify(board)) {
       const newSpawned = spawnNewTile(newBoard);
       setBoard(newSpawned);

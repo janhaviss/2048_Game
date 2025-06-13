@@ -88,22 +88,27 @@ export function moveDown(board) {
 
 
 // Spawn a new tile (2 or 4) at random empty position
-export function spawnNewTile(board) {
-  let emptyPositions = [];
-  board.forEach((row, i) => {
-    row.forEach((val, j) => {
-      if (val === 0) emptyPositions.push([i, j]);
-    });
-  });
-  if (emptyPositions.length === 0) return board; // no empty spot
+export function spawnNewTile(board, hardMode = false) {
+  const emptyTiles = [];
 
-  const [x, y] = emptyPositions[Math.floor(Math.random() * emptyPositions.length)];
-  const newTile = Math.random() < 0.9 ? 2 : 4;
+  board.forEach((row, i) =>
+    row.forEach((cell, j) => {
+      if (cell === 0) emptyTiles.push([i, j]);
+    })
+  );
 
-  const newBoard = board.map(row => row.slice());
-  newBoard[x][y] = newTile;
+  if (emptyTiles.length === 0) return board;
+
+  const [i, j] = emptyTiles[Math.floor(Math.random() * emptyTiles.length)];
+  const newValue = hardMode
+    ? (Math.random() < 0.6 ? 4 : 2) // 60% chance for 4
+    : (Math.random() < 0.9 ? 2 : 4); // Normal: 90% chance for 2
+
+  const newBoard = board.map(row => [...row]);
+  newBoard[i][j] = newValue;
   return newBoard;
 }
+
 
 export function isGameOver(board) {
   const size = board.length;
