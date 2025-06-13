@@ -1,3 +1,4 @@
+/* Base footer styling */
 .footer {
   position: fixed;
   bottom: 0;
@@ -6,6 +7,7 @@
   background-color: #b0db9c;
   color: #2e3d27;
   text-align: center;
+<<<<<<< HEAD
   padding: 1px 0;
   font-size: 0.7rem;
   box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
@@ -13,16 +15,47 @@
 }
 
 
+=======
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 2px solid #B0DB9C;
+  margin-top: 3rem;
+  animation: fadeInUp 1s ease-in-out;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Span text inside footer */
+>>>>>>> 98588df41d9173000943470374a0a9aa06d68194
 .footer span {
-  color: #80b878;
+  color: #80b878; /* Default for green theme */
   font-weight: 600;
 }
 
-/* Simple fade-in animation */
+/* PINK THEME OVERRIDES */
+.pink .footer {
+  background-color: #ffe6f5;
+  border-top-color: #f7c1e8;
+}
+
+.pink .footer span {
+  color: #d672b6;
+}
+
+/* BLUE THEME OVERRIDES */
+.blue .footer {
+  background-color: #e4f3ff;
+  border-top-color: #a6d4f2;
+}
+
+.blue .footer span {
+  color: #5297d1;
+}
+
+/* Optional: subtle animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;

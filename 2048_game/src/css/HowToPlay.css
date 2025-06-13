@@ -1,3 +1,4 @@
+/* Default (Green Theme) */
 .howto-container {
   background-color: #ECFAE5;
   color: #3b3b3b;
@@ -19,6 +20,7 @@
 
 }
 
+<<<<<<< HEAD
 
 
 .howto-container::-webkit-scrollbar {
@@ -50,17 +52,13 @@
 
 
 
+=======
+>>>>>>> 98588df41d9173000943470374a0a9aa06d68194
 .howto-container h1 {
   color: #B0DB9C;
   font-size: 2.8rem;
   text-align: center;
   margin-bottom: 1rem;
-}
-
-.intro {
-  font-size: 1.3rem;
-  text-align: center;
-  margin-bottom: 2rem;
 }
 
 .instructions,
@@ -79,6 +77,64 @@
   font-size: 1.7rem;
 }
 
+/* THEME OVERRIDES */
+
+/* Pink Theme */
+.pink .howto-container {
+  background-color: #ffe6f5;
+}
+
+.pink .howto-container h1 {
+  color: #f7c1e8;
+}
+
+.pink .instructions,
+.pink .tips {
+  background-color: #fbe0f1;
+}
+
+.pink .instructions h2,
+.pink .tips h2 {
+  color: #d672b6;
+}
+
+/* Blue Theme */
+.blue .howto-container {
+  background-color: #e4f3ff;
+}
+
+.blue .howto-container h1 {
+  color: #a6d4f2;
+}
+
+.blue .instructions,
+.blue .tips {
+  background-color: #d4ecfc;
+}
+
+.blue .instructions h2,
+.blue .tips h2 {
+  color: #5297d1;
+}
+
+/* Shared Styles */
+.demo-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.demo-video {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.intro {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 .instructions ul,
 .tips ul {
   padding-left: 1.5rem;
@@ -92,64 +148,31 @@
 
 /* Animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes slideLeft {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideRight {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes zoomIn {
-  from {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
-.fade-in {
-  animation: fadeIn 1s ease-in;
-}
-.slide-left {
-  animation: slideLeft 1s ease-in-out;
-}
-.slide-right {
-  animation: slideRight 1s ease-in-out;
-}
-.slide-down {
-  animation: fadeIn 1s ease-in-out;
-}
-.zoom-in {
-  animation: zoomIn 1s ease-in-out;
-}
+.fade-in { animation: fadeIn 1s ease-in; }
+.slide-left { animation: slideLeft 1s ease-in-out; }
+.slide-right { animation: slideRight 1s ease-in-out; }
+.slide-down { animation: fadeIn 1s ease-in-out; }
+.zoom-in { animation: zoomIn 1s ease-in-out; }
+
 hr {
   border: none;
   height: 2px;
@@ -162,19 +185,6 @@ hr {
 }
 
 @keyframes growLine {
-  from {
-    width: 0;
-    opacity: 0;
-  }
-  to {
-    width: 60%;
-    opacity: 0.8;
-  }
-}
-
-
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from { width: 0; opacity: 0; }
+  to { width: 60%; opacity: 0.8; }
 }

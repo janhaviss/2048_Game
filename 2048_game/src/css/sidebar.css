@@ -76,11 +76,8 @@
 }
 
 .score-item {
-  background-color: #DDF6D2;
   padding: 0.5rem 1rem;
-  border-radius: 12px;
   font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .restart-btn {

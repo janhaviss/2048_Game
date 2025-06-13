@@ -14,64 +14,64 @@
 
 /* Base zero tile (empty) */
 .tile-0 {
-  background-color: #cae8bd;
+  background-color: #e1e6df;
   color: transparent;
 }
 
 /* Numbered tiles with colors */
 .tile-2 {
-  background-color: #c9f1cc;
+  background-color: #def9e1; /* very light pastel green */
   color: #3c3c3c;
 }
 
 .tile-4 {
-  background-color: #9ceca1;
+  background-color: #c5face;
   color: #3c3c3c;
 }
 
 .tile-8 {
-  background-color: #82d4ab;
+  background-color: #a7eec0;
   color: #3c3c3c;
 }
 
 .tile-16 {
-  background-color: #55AD9B;
+  background-color: #85e2a9;
   color: #3c3c3c;
 }
 
 .tile-32 {
-  background-color: #80BCBD;
+  background-color: #63d18c;
   color: #3c3c3c;
 }
 
 .tile-64 {
-  background-color: #7ca885;
-  color: #3c3c3c;
+  background-color: #47c06e;
+  color: white;
 }
 
 .tile-128 {
-  background-color: #628d6c;
-  color: #3c3c3c;
+  background-color: #2fad59;
+  color: white;
 }
 
 .tile-256 {
-  background-color: #618264;
-  color: #3c3c3c;
+  background-color: #239a49;
+  color: white;
 }
 
 .tile-512 {
-  background-color: #1F7D53;
-  color: #3c3c3c;
+  background-color: #1b7d3a;
+  color: white;
 }
 
 .tile-1024 {
-  background-color: #255F38;
-  color: #3c3c3c;
+  background-color: #155f2c;
+  color: white;
 }
 
 .tile-2048 {
-  background-color: #006A67;
-  color: #3c3c3c;
+  background-color: #0d4c21;
+  color: white;
 }
 
 
@@ -149,22 +149,22 @@
 }
 
 .blue .tile-2 {
-  background-color: #89cdf8;
+  background-color: #d5f0ff;
   color: #4c2a33;
 }
 
 .blue .tile-4 {
-  background-color: #67C6E3 ;
+  background-color: #a6dcf9 ;
   color: #4c2a33;
 }
 
 .blue .tile-8 {
-  background-color:#0786b1  ;
+  background-color:#75c3f1  ;
   color: white;
 }
 
 .blue .tile-16 {
-  background-color:#397cb3 ;
+  background-color:#4daae5 ;
   color: white;
 }
 

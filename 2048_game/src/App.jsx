@@ -9,34 +9,56 @@ import './App.css';
 export default function App() {
   const [activePage, setActivePage] = useState('game');
 
+  // Score
   const [score, setScore] = useState(0);
+  //HighScore
   const [highScore, setHighScore] = useState(() => {
-    const saved = localStorage.getItem('highScore');
+  const saved = localStorage.getItem('highScore');
     return saved ? parseInt(saved, 10) : 0;
   });
+  //Game over
   const [gameOver, setGameOver] = useState(false);
+  //Game key
   const [gameKey, setGameKey] = useState(0);
+  //Move
   const [moveCount, setMoveCount] = useState(0); 
+  //Theme
   const [tileTheme, setTileTheme] = useState(() => {
     return localStorage.getItem('tileTheme') || 'green';
   });
+  //Hard Mode
+  const [hardMode, setHardMode] = useState(false);
 
+
+// For Tile theme 
  useEffect(() => {
   if (!localStorage.getItem('tileTheme')) {
     localStorage.setItem('tileTheme', 'green');
   }
 }, []);
 
+// For Highscore 
+useEffect(() => {
+  if (score > highScore) {
+    setHighScore(score);
+    localStorage.setItem('highScore', score);
+  }
+}, [score, highScore]);
+
+// for reseting highscore
+const resetHighScore = () => {
+  localStorage.removeItem('highScore');
+  setHighScore(0);
+};
+
 
   const handleRestart = () => {
-    const confirmed = window.confirm("Are you sure you want to restart the game?");
-    if (confirmed) {
-      setGameKey(prev => prev + 1);
-      setScore(0);
-      setGameOver(false);
-      setMoveCount(0);
-    }
-  };
+  setGameKey(prev => prev + 1);
+  setScore(0);
+  setGameOver(false);
+  setMoveCount(0);
+};
+
 
   return (
     <div className={`app-container ${tileTheme}`}>
@@ -63,6 +85,7 @@ export default function App() {
           setGameOver={setGameOver} 
           setMoveCount={setMoveCount}
           tileTheme={tileTheme}
+          hardMode={hardMode}
 
         />
 
@@ -71,13 +94,21 @@ export default function App() {
         ) : activePage === 'howToPlay' ? (
           <HowToPlay />
         ) : (
-          <div>
-            <h3>Change Game theme :</h3>
+          <div className='settingsDiv'>
+            <h3>Change Game Color theme :</h3>
              <div className="theme-circles">
-  <button className="theme-btn green" onClick={() => setTileTheme('green')} />
-  <button className="theme-btn pink" onClick={() => setTileTheme('pink')} />
-  <button className="theme-btn blue" onClick={() => setTileTheme('blue')} />
-</div>
+              <button className="theme-btn green" onClick={() => setTileTheme('green')} />
+              <button className="theme-btn pink" onClick={() => setTileTheme('pink')} />
+              <button className="theme-btn blue" onClick={() => setTileTheme('blue')} />
+            </div>
+            <h3>Reset High Score</h3>
+            <button className="resetbtn" onClick={resetHighScore}>Reset High Score</button>
+
+            <h3>Change Game mode</h3>
+            <button className="hardmodebtn" onClick={() => setHardMode(prev => !prev)}>
+              {hardMode ? 'Normal Mode' : 'Hard Mode'}
+            </button>
+
           </div>
         )}
 
