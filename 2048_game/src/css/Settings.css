@@ -143,3 +143,47 @@
     font-size: 0.75rem;
   }
 }
+
+
+/* RESET BUTTON */
+.resetbtn{
+  background-color: #fff;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: background-color 0.2s ease;
+  margin-bottom: 14px;
+}
+
+.settingsDiv{
+  padding: 8px 16px;
+  border: 1px solid black;
+}
+
+.hardmodebtn{
+  background-color: #fff;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: background-color 0.2s ease;
+  margin-bottom: 14px;
+}
+
+/* SOUND SETTING BUTTON */
+button {
+  padding: 8px 12px;
+  background-color: #b0db9c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}

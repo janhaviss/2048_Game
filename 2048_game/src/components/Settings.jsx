@@ -1,7 +1,9 @@
 import React from 'react';
 import '../css/Settings.css';
+import { MdOutlineMusicNote,MdOutlineMusicOff } from "react-icons/md";
 
-export default function Settings({ tileTheme, setTileTheme, resetHighScore, hardMode, setHardMode }) {
+
+export default function Settings({ setSoundEnabled, setTileTheme, resetHighScore, hardMode, setHardMode,  soundEnabled }) {
   return (
     <div className="settings-container">
       <div className="settings-card">
@@ -33,11 +35,13 @@ export default function Settings({ tileTheme, setTileTheme, resetHighScore, hard
 
 
     <div className="settings-card">
-      Sound
-    </div>
-
-
-
+      Sound Settings
+        <div style={{ marginTop: '1rem' }}>
+          <button onClick={() => setSoundEnabled(prev => !prev)}>
+          {soundEnabled ? (<><MdOutlineMusicNote /> Sound On</>) : (<><MdOutlineMusicOff />Sound Off</>)}
+          </button>
+          </div>    
+          </div>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../css/sidebar.css';
 import { FaBars, FaTimes, FaCog, FaGamepad, FaInfoCircle } from 'react-icons/fa';
 
+
 // 👇 Remove hrefs and use route keys instead
 const menuItems = [
   { name: 'Play 2048', route: 'game', icon: <FaGamepad /> },

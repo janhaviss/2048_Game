@@ -88,11 +88,6 @@ const resetHighScore = () => {
           <div className="score-item">High Score: {highScore}</div>
           <div className="score-item">Moves: {moveCount}</div>
           <button className="restart-btn" onClick={handleRestart}>Restart</button>
-          <div style={{ marginTop: '1rem' }}>
-          <button onClick={() => setSoundEnabled(prev => !prev)}>
-            {soundEnabled ? '🔊 Sound On' : '🔇 Sound Off'}
-          </button>
-          </div>
        
         </div>
 
@@ -120,6 +115,10 @@ const resetHighScore = () => {
             resetHighScore={resetHighScore}
             hardMode={hardMode}
             setHardMode={setHardMode}
+            soundEnabled={soundEnabled}
+            setSoundEnabled={setSoundEnabled}
+
+
           />
         )}
 
