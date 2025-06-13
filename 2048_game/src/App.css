@@ -1,9 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;}  /* This hides the scrollbar */
+ 
+
+
 .app-container {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(to right, #ecfae5, #ddf6d2);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #2e3d27;
+  overflow: hidden; 
+
 }
 
 .main-content {

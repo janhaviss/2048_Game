@@ -1,15 +1,17 @@
 .footer {
-  background-color: #ECFAE5;
-  color: #3b3b3b;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 92.7%;
+  background-color: #b0db9c;
+  color: #2e3d27;
   text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  border-top: 2px solid #B0DB9C;
-  margin-top: 3rem;
-  animation: fadeInUp 1s ease-in-out;
-  font-family: 'Segoe UI', sans-serif;
-  
+  padding: 1px 0;
+  font-size: 0.7rem;
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
+
 
 .footer span {
   color: #80b878;

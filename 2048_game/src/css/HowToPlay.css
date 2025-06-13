@@ -8,7 +8,28 @@
   font-family: 'Segoe UI', sans-serif;
   animation: fadeIn 1s ease-in;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+
+
+   /* Scroll setup */
+  max-height: calc(100vh - 100px); /* adjusts based on your layout */
+  overflow-y: auto;
+
+
+
 }
+
+
+
+.howto-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.howto-container::-webkit-scrollbar-thumb {
+  background-color: #B0DB9C;
+  border-radius: 6px;
+}
+
 
 
 .demo-wrapper {
