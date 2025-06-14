@@ -147,7 +147,7 @@
 
 /* RESET BUTTON */
 .resetbtn{
-  background-color: #fff;
+  background-color: #aeb1ac;
   color: black;
   border: none;
   padding: 8px 16px;
@@ -180,7 +180,7 @@
 /* SOUND SETTING BUTTON */
 button {
   padding: 8px 12px;
-  background-color: #b0db9c;
+  background-color: #aeb1ac;
   border: none;
   border-radius: 8px;
   cursor: pointer;
