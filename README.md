@@ -41,9 +41,8 @@ Make sure you have **Node.js** and **npm** installed.
 🧑‍💻 Contributors
 We built this together with love 💖
 
-@mruna18
-
-@janhaviss
+[Mrunali](https://github.com/mruna18)
+[Janhavi](https://github.com/janhaviss)
 
 
 📸 Screenshots
