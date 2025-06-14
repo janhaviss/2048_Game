@@ -30,15 +30,15 @@ Make sure you have **Node.js** and **npm** installed.
    git clone https://github.com/janhaviss/2048_Game
 
 2. Install dependencies:
-
-  ```bash
-  npm install
+   
+     ```bash
+     npm install
 
 3. Start the development server:
-  ```bash
-  npm run dev
+     ```bash
+     npm run dev
 
-  🧑‍💻 Contributors
+🧑‍💻 Contributors
 We built this together with love 💖
 
 @mruna18
