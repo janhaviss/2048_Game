@@ -1,24 +1,12 @@
 /* Base footer styling */
 .footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
-    /* I CHANGED THIS */
   width: 100%;
-  left: 0;
-  right: 0;
-    /* I CHANGED THIS */
-
   background-color: #b0db9c;
-  color: #2e3d27;
   text-align: center;
-  padding: 1px 0;
+  padding: 6px 0;
   font-size: 0.7rem;
-  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10;
- 
-  overflow-x: hidden;
-  box-sizing: border-box;
-
 }
 
 .footer span {
