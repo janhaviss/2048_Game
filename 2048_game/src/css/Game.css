@@ -3,30 +3,25 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  min-height: 60vh;
   box-sizing: border-box;
-  width: 100%;
 }
 
 .game-container {
   background-color: #3c5f41;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(165, 159, 159, 0.549);
-  width: fit-content;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 420px;
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
 }
-
-
 
 /* Game Board Layout */
 .board {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  width: 100%;
-  aspect-ratio: 1 / 1;
 }
 
 .board-row {
@@ -93,11 +88,5 @@
 
   .board-row {
     gap: 6px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .game-container {
-    max-width: 800px; /* Expand for desktop */
   }
 }

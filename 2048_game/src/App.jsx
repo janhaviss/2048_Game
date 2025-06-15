@@ -100,9 +100,9 @@ export default function App() {
           )}
 
           
+      <Footer />
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
