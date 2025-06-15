@@ -10,7 +10,11 @@
   font-size: 1.5rem;
   transition: all 0.3s ease-in-out;
   color: white;
+  width: 100%;
+  aspect-ratio: 1 / 1;
 }
+
+
 
 /* Responsive scaling using media queries */
 @media screen and (max-width: 600px) {

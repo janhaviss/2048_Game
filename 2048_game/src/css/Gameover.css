@@ -9,6 +9,8 @@
   justify-content: center;
   align-items: center;
   z-index: 999;
+  padding: 1rem; /* Ensures padding on tiny screens */
+  box-sizing: border-box;
 }
 
 .gameover-box {
@@ -17,8 +19,8 @@
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  max-width: 90vw;
   width: 100%;
+  max-width: 400px;
   box-sizing: border-box;
 }
 
@@ -34,10 +36,23 @@
   transition: background 0.3s ease;
 }
 
-/* Responsive scaling */
+/* Tablet and smaller adjustments */
+@media screen and (max-width: 768px) {
+  .gameover-box {
+    padding: 1.5rem 2rem;
+    max-width: 90vw;
+  }
+
+  .restart-btn {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Small mobile devices */
 @media screen and (max-width: 500px) {
   .gameover-box {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .gameover-box h2 {
@@ -49,8 +64,30 @@
   }
 
   .restart-btn {
-    font-size: 0.95rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    padding: 0.45rem 0.9rem;
+  }
+}
+
+/* Very small screens (like older phones) */
+@media screen and (max-width: 360px) {
+  .gameover-box {
+    transform: scale(0.95);
+  }
+}
+
+.gameover-box {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
