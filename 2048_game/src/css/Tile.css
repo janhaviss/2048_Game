@@ -25,7 +25,7 @@
     margin: 3px;
   }
 }
-
+/* 
 @media screen and (max-width: 400px) {
   .tile {
     width: 40px;
@@ -33,7 +33,7 @@
     font-size: 0.9rem;
     margin: 2px;
   }
-}
+} */
 
 
 /* Base zero tile (empty) */
