@@ -2,9 +2,8 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;}  /* This hides the scrollbar */
- 
-
+  overflow-x: hidden;
+}
 
 .app-container {
   display: flex;
@@ -12,34 +11,47 @@ html, body {
   background: linear-gradient(to right, #ecfae5, #ddf6d2);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #2e3d27;
-  overflow: hidden; 
+  overflow: hidden;
+}
 
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* added for vertical centering */
+  padding: 2rem;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .main-content {
-  flex: 1;
-  padding: 0 rem;
+  width: 100%;
+  max-width: 768px;
   background-color: #cae8bd;
+  padding: 1rem;
+  border-radius: 12px;
   transition: background-color 0.3s ease-in-out;
+  box-sizing: border-box;
 }
 
+/* Typography */
 .main-content h1 {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 0.5 rem;
+  margin-bottom: 0.5rem;
   color: #3c5f41;
   text-align: center;
 }
 
 .intro-text {
   font-size: 1.1rem;
-  margin-bottom: 0. 5 rem;
+  margin-bottom: 0.5rem;
   color: #3e5f3d;
-  /* max-width: 500px; */
   line-height: 1.6;
   text-align: center;
 }
 
+/* Button */
 .restart-btn {
   background-color: #3c5f41;
   color: white;
@@ -48,7 +60,6 @@ html, body {
   font-weight: bold;
   border-radius: 6px;
   cursor: pointer;
-  margin-left: 12px;
   transition: background-color 0.2s ease;
   margin-bottom: 14px;
 }
@@ -57,60 +68,88 @@ html, body {
   background-color: #388e3c;
 }
 
-
 /* PINK THEME */
 .pink.app-container {
   background: linear-gradient(to right, #ffe0f0, #fbd3e9);
   color: #4d2a35;
 }
-
-.pink .main-content {
-  background-color: #fbd3e9;
-}
-
-.pink .main-content h1 {
-  color: #a4456f;
-}
-
-.pink .intro-text {
-  color: #91345e;
-}
-
-.pink .restart-btn {
-  background-color: #a4456f;
-  color: white;
-}
-
-.pink .restart-btn:hover {
-  background-color: #892d58;
-}
-
-
+.pink .main-content { background-color: #fbd3e9; }
+.pink .main-content h1 { color: #a4456f; }
+.pink .intro-text { color: #91345e; }
+.pink .restart-btn { background-color: #a4456f; }
+.pink .restart-btn:hover { background-color: #892d58; }
 
 /* BLUE THEME */
 .blue .app-container {
-  background: linear-gradient(to right, #ffe0f0, #fbd3e9);
-  color: #4d2a35;
+  background: linear-gradient(to right, #e0f7ff, #d3effb);
+  color: #00335d;
+}
+.blue .main-content { background-color: #add8e6; }
+.blue .main-content h1,
+.blue .intro-text { color: #000B58; }
+.blue .restart-btn { background-color: #000B58; color: white; }
+.blue .restart-btn:hover { background-color: #3c4271; }
+
+/* RESPONSIVE STYLING */
+@media screen and (max-width: 768px) {
+  .content-wrapper {
+    padding: 1rem;
+    align-items: flex-start; /* Ensures scrollability on very short screens */
+  }
+
+  .main-content {
+    padding: 0.8rem;
+  }
+
+  .main-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .score-container {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .score-item {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .restart-btn {
+    width: 100%;
+    margin-left: 0;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+  }
 }
 
-.blue .main-content {
-  background-color: #add8e6;
-}
+@media screen and (max-width: 480px) {
+  .main-content h1 {
+    font-size: 1.3rem;
+  }
 
-.blue .main-content h1 {
-  color: #000B58;
-}
+  .intro-text {
+    font-size: 0.9rem;
+  }
 
-.blue .intro-text {
-  color: #000B58;
-}
+  .score-container {
+    font-size: 0.9rem;
+    gap: 0.6rem;
+    padding: 0.6rem;
+  }
 
-.blue .restart-btn {
-  background-color: #000B58;
-  color: white;
-}
+  .score-item {
+    font-size: 0.9rem;
+  }
 
-.blue .restart-btn:hover {
-  background-color: #3c4271;
+  .restart-btn {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
 }
-

@@ -17,6 +17,9 @@
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 90vw;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .restart-btn {
@@ -31,8 +34,24 @@
   transition: background 0.3s ease;
 }
 
-.restart-btn:hover {
-  background-color: #2c4830;
+/* Responsive scaling */
+@media screen and (max-width: 500px) {
+  .gameover-box {
+    padding: 1.5rem;
+  }
+
+  .gameover-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .gameover-box p {
+    font-size: 1rem;
+  }
+
+  .restart-btn {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
 /* PINK THEME */

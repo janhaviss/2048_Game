@@ -2,7 +2,7 @@
 .sidebar {
   background-color: #B0DB9C;
   width: 170px;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease-in;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
