@@ -83,6 +83,12 @@
     margin-left: 200px; /* full sidebar width */
   }
 }
+.sidebar {
+  width: 240px;
+  transition: transform 0.3s ease;
+}
+
+
 
 /* colro */
 /* PINK THEME */
@@ -194,4 +200,5 @@
 .theme-btn.blue {
   background-color: #000B58;
 }
+
 
