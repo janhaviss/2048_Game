@@ -52,7 +52,7 @@ export default function App() {
 
   return (
     <div className={`app-container ${tileTheme}`}>
-      <Sidebar setTileTheme={setTileTheme} onNavigate={setActivePage} />
+      {/* <Sidebar setTileTheme={setTileTheme} onNavigate={setActivePage} /> */}
 
       {/* Main Wrapper for responsive layout */}
       <div className="content-wrapper">
