@@ -5,6 +5,11 @@ html, body {
   overflow-x: hidden;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+
 .app-container {
   display: flex;
   height: 100vh; /*?*/
@@ -34,6 +39,17 @@ html, body {
   border-radius: 12px;
   transition: background-color 0.3s ease-in-out;
   box-sizing: border-box;
+}
+
+/* Prevent any child from overflowing */
+.app-container,
+.content-wrapper,
+.main-content {
+  overflow-x: hidden;
+}
+
+* {
+  outline: 1px solid red; /* Remove after testing */
 }
 
 /* Typography */
