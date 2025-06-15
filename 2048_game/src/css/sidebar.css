@@ -2,7 +2,7 @@
 .sidebar {
   width: 200px;
   min-height: 100vh;
-  background-color: #B0DB9C; /* Green */
+  background-color: #b0db9c; /* Green */
   color: #333;
   transition: width 0.3s ease;
   display: flex;
@@ -38,7 +38,7 @@
 }
 
 .nav-item:hover {
-  background-color: #CAE8BD;
+  background-color: #cae8bd;
   cursor: pointer;
 }
 
@@ -72,7 +72,7 @@
     top: 0;
     left: 0;
     height: 100vh;
-    width: 180px; 
+    width: 180px;
   }
 
   .content-wrapper {
@@ -90,14 +90,11 @@
   transition: transform 0.3s ease;
 } */
 
-  /* I CHANGED THIS */
-
-
 /* colro */
 /* PINK THEME */
 
 .pink .sidebar {
-  background-color: #F8C8DC;
+  background-color: #f8c8dc;
   color: #3e1f2a;
   border-right: 1px solid #e8a6c3;
 }
@@ -136,23 +133,23 @@
 .blue .sidebar {
   background-color: #8dd8f1;
   color: #3e1f2a;
-  border-right: 1px solid #000B58;
+  border-right: 1px solid #000b58;
 }
 
 .blue .sidebar-header h1 {
-  color: #000B58;
+  color: #000b58;
 }
 
 .blue .toggle-button {
-  color: #000B58;
+  color: #000b58;
 }
 
 .blue .toggle-button:hover {
-  color: #000B58;
+  color: #000b58;
 }
 
 .blue .nav-links a {
-  color: #000B58;
+  color: #000b58;
 }
 
 .blue .nav-links a:hover {
@@ -160,14 +157,13 @@
 }
 
 .blue .nav-icon {
-  color: #000B58;
+  color: #000b58;
 }
 
 .blue .nav-item:hover {
   background-color: #70a8e0;
   cursor: pointer;
 }
-
 
 /* SWTACH BUTTONS */
 .theme-circles {
@@ -201,7 +197,14 @@
 }
 
 .theme-btn.blue {
-  background-color: #000B58;
+  background-color: #000b58;
 }
 
-
+.score-container,
+.restart-btn,
+button,
+input {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-x: hidden;
+}

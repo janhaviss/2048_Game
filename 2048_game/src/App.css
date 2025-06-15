@@ -1,47 +1,17 @@
-/* body::-webkit-scrollbar {
-  display: none;
-}
-body {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-} */
-
 html, body {
   margin: 0;
   padding: 0;
-    /* I CHANGED THIS */
-  width: 100%;
-  min-height: 100vh;
-    /* I CHANGED THIS */
-
+  height: 100%;
   overflow-x: hidden;
-
 }
-  /* I CHANGED THIS */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-  /* I CHANGED THIS */
-
-
 
 .app-container {
   display: flex;
-  /* I CHANGED THIS */
-  min-height: 100vh;
-  /* I CHANGED THIS */
+  height: 100vh;
   background: linear-gradient(to right, #ecfae5, #ddf6d2);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #2e3d27;
-  overflow-x: hidden;
-  overflow-y: auto;
-  max-height: 100vh;
-
-    /* padding-bottom: 2rem; or whatever the footer height is */
-
+  overflow: hidden;
 }
 
 .content-wrapper {
@@ -49,36 +19,19 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center; /* added for vertical centering */
-  padding: 1rem;
+  padding: 2rem;
   box-sizing: border-box;
   width: 100%;
 }
 
 .main-content {
   width: 100%;
-  max-width: 1100px;
-    /* I CHANGED THIS */
-  display: flex;
-  flex-direction: column;
-    /* I CHANGED THIS */
-
-  margin: 0 auto;
+  max-width: 768px;
   background-color: #cae8bd;
-  padding: 1rem 2rem;
+  padding: 1rem;
   border-radius: 12px;
   transition: background-color 0.3s ease-in-out;
   box-sizing: border-box;
-}
-
-/* Prevent any child from overflowing */
-.app-container,
-.content-wrapper,
-.main-content {
-  overflow-x: hidden;
-}
-
-* {
-  outline: 1px solid red; /* Remove after testing */
 }
 
 /* Typography */
@@ -120,24 +73,17 @@ html, body {
   background: linear-gradient(to right, #ffe0f0, #fbd3e9);
   color: #4d2a35;
 }
-.pink .content-wrapper{ background-color: #fcadd8; }
 .pink .main-content { background-color: #fbd3e9; }
 .pink .main-content h1 { color: #a4456f; }
 .pink .intro-text { color: #91345e; }
-.pink .score-container{background-color: #d58aab ;color: #fff}
-.pink .game-container {background-color: #a4456f ;color: #fff}
-.pink .restart-btn { background-color: #a4456f;color: #fff; }
+.pink .restart-btn { background-color: #a4456f; }
 .pink .restart-btn:hover { background-color: #892d58; }
-.pink .theme-btn:hover{background-color: #a4456f;}
 
 /* BLUE THEME */
 .blue .app-container {
   background: linear-gradient(to right, #e0f7ff, #d3effb);
   color: #00335d;
 }
-.blue .content-wrapper{ background-color: #d3effb; }
-.blue .score-container{background-color: #d3effb ;color: #fff}
-.blue .game-container {background-color: #00335d ;color: #fff}
 .blue .main-content { background-color: #add8e6; }
 .blue .main-content h1,
 .blue .intro-text { color: #000B58; }
@@ -145,8 +91,6 @@ html, body {
 .blue .restart-btn:hover { background-color: #3c4271; }
 
 /* RESPONSIVE STYLING */
-
-
 @media screen and (max-width: 768px) {
   .content-wrapper {
     padding: 1rem;
@@ -207,47 +151,5 @@ html, body {
   .restart-btn {
     font-size: 0.85rem;
     padding: 5px 10px;
-  }
-}
-
-@media screen and (min-width: 641px) and (max-width: 1024px) {
-  .content-wrapper {
-    padding: 1.5rem;
-    margin-left: 80px; /* Optional: add margin if sidebar is collapsed */
-    transition: margin 0.3s ease;
-  }
-
-  .main-content {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-
-  .score-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .restart-btn {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 400px) {
-  .content-wrapper {
-    flex-direction: column;
-    align-items: flex-start; /* 🔁 Let content start from top */
-    justify-content: flex-start;
-    padding: 0.5rem;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-
-  .main-content {
-    padding: 0.8rem;
-    width: 100%;
-    box-sizing: border-box;
-    max-width: 100%;
-    overflow-x: hidden;
   }
 }
