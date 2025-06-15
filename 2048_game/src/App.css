@@ -1,9 +1,18 @@
+/* body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+} */
+
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  overflow-x: hidden;
-}
+    /* I CHANGED THIS */
+  width: 100%;
+  min-height: 100vh;
+    /* I CHANGED THIS */
 
 * {
   margin: 0;
@@ -11,17 +20,25 @@ html, body {
   box-sizing: border-box;
   max-width: 100vw;
 }
+  /* I CHANGED THIS */
+
 
 
 
 .app-container {
   display: flex;
-  height: 100vh; /*?*/
+  /* I CHANGED THIS */
+  min-height: 100vh;
+  /* I CHANGED THIS */
   background: linear-gradient(to right, #ecfae5, #ddf6d2);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #2e3d27;
   overflow-x: hidden;
   overflow-y: auto;
+  max-height: 100vh;
+
+    /* padding-bottom: 2rem; or whatever the footer height is */
+
 }
 
 .content-wrapper {
@@ -36,7 +53,12 @@ html, body {
 
 .main-content {
   width: 100%;
-  max-width: 1100px; /* or 100% if you want full width */
+  max-width: 1100px;
+    /* I CHANGED THIS */
+  display: flex;
+  flex-direction: column;
+    /* I CHANGED THIS */
+
   margin: 0 auto;
   background-color: #cae8bd;
   padding: 1rem 2rem;

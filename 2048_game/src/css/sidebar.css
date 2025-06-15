@@ -83,10 +83,12 @@
     margin-left: 200px; /* full sidebar width */
   }
 }
-.sidebar {
+   /* I CHANGED THIS */
+
+/* .sidebar {
   width: 240px;
   transition: transform 0.3s ease;
-}
+} */
 
 /* colro */
 /* PINK THEME */
