@@ -117,19 +117,41 @@ html, body {
     width: 100%;
   }
 
+  .main-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .score-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .score-item {
+    margin-bottom: 0.5rem;
+  }
+
   .restart-btn {
-    width: 100%;
-    font-size: 0.95rem;
-    padding: 6px 12px;
-    margin-left: 0;
+    margin-top: 1rem;
   }
 }
 
 
 
 @media screen and (max-width: 480px) {
-  .restart-btn {
-    font-size: 0.85rem;
-    padding: 5px 10px;
+  .main-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .score-item {
+    font-size: 1rem;
   }
 }
