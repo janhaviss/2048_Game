@@ -1,23 +1,65 @@
 .game-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 1rem;
-  min-height: 60vh;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .game-container {
   background-color: #3c5f41;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 420px;
+  max-width: 340px;  /* ⬅️ slightly smaller for <360px devices */
   box-sizing: border-box;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* Game Board Layout */
+.board-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+
+.score-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0 auto 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #3c5f41;
+  background-color: #B0DB9C;
+  max-width: 500px; /* ⬅️ new: wide enough for all items */
+  width: 100%;
+  box-sizing: border-box;
+}
+.score-item {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2e3d27;
+  text-align: center;
+}
+
+/* Style the restart button consistently */
+.score-container .restart-btn {
+  margin-bottom: 0;
+}
+
+/* 
 .board {
   display: flex;
   flex-direction: column;
@@ -27,31 +69,41 @@
 .board-row {
   display: flex;
   gap: 8px;
+} */
+
+
+/* THEMED GAME ELEMENTS */
+.pink .game-container {
+  background-color: #a4456f;
+  color: #fff;
 }
 
-/* Score display */
-.score-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 1rem;
-  background-color: #B0DB9C;
-  /* padding: 0.6rem 1rem; */
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid #3c5f41;
-  flex-wrap: wrap;
+.pink .score-container {
+  background-color: #f5b8cf;
+  border-color: #a4456f;
+  color: #4d2a35;
 }
 
-.score-item {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #2e3d27;
-  text-align: center;
+.pink .score-item {
+  color: #4d2a35;
 }
 
-/* Make layout responsive on tablets and phones */
+.blue .game-container {
+  background-color: #000B58;
+  color: white;
+}
+
+.blue .score-container {
+  background-color: #b1d6ff;
+  border-color: #000B58;
+  color: #00103a;
+}
+
+.blue .score-item {
+  color: #00103a;
+}
+
+/* Responsive */
 @media screen and (max-width: 768px) {
   .game-container {
     max-width: 90vw;
@@ -68,19 +120,21 @@
 }
 
 @media screen and (max-width: 480px) {
-  .game-container {
-    padding: 1rem;
-  }
-
   .score-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-  }
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.8rem;
+}
 
-  .score-item {
-    font-size: 1rem;
-  }
+.score-item {
+  font-size: 1rem;
+}
+
+.game-container {
+  padding: 0.8rem;
+  max-width: 95vw; /* Makes sure it doesn't overflow smaller phones */
+}
 
   .board {
     gap: 6px;
@@ -90,3 +144,22 @@
     gap: 6px;
   }
 }
+
+@media screen and (max-width: 360px) {
+  .game-container {
+    max-width: 320px;
+    padding: 0.5rem;
+  }
+
+  .score-container {
+    padding: 0.6rem;
+    gap: 0.5rem;
+  }
+
+  .tile {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}
+
