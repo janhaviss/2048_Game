@@ -5,10 +5,12 @@ import GameOver from './components/Gameover';
 import HowToPlay from './components/HowToPlay';
 import Footer from './components/Footer';
 import Settings from './components/Settings';
+import Landing from './components/Landing';
 import './App.css';
 
 export default function App() {
   const [activePage, setActivePage] = useState('game');
+  const [hasStarted, setHasStarted] = useState(false);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(() => {
     const saved = localStorage.getItem('highScore');
@@ -48,24 +50,17 @@ export default function App() {
     setMoveCount(0);
   };
 
-  
-
   return (
     <div className={`app-container ${tileTheme}`}>
       <Sidebar setTileTheme={setTileTheme} onNavigate={setActivePage} />
 
-      {/* Main Wrapper for responsive layout */}
       <div className="content-wrapper">
         <div className="main-content">
-          {activePage === 'game' ? (
+          {!hasStarted ? (
+            <Landing onStart={() => setHasStarted(true)} />
+          ) : activePage === 'game' ? (
             <>
-              <h1>Welcome to 2048!</h1>
-              <h4 className="intro-text">
-                Combine the numbered tiles by swiping or using your arrow keys.
-                Reach 2048 to win — but how far can you really go?
-              </h4>
-
-              <div className="score-container">
+                  <div className="score-container">
                 <div className="score-item">Score: {score}</div>
                 <div className="score-item">High Score: {highScore}</div>
                 <div className="score-item">Moves: {moveCount}</div>
@@ -98,10 +93,10 @@ export default function App() {
               setSoundEnabled={setSoundEnabled}
             />
           )}
-
-          <Footer />
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
