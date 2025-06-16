@@ -1,104 +1,105 @@
+/* Ensure no unwanted scrollbars */
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
   overflow-x: hidden;
+  width: 100%;
+  height: 100%;
 }
 
+/* Restrict app container */
 .app-container {
   display: flex;
-  height: 100vh;
-  background: linear-gradient(to right, #ecfae5, #ddf6d2);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #2e3d27;
+  min-height: 100vh;
+  max-width: 100vw;
   overflow: hidden;
+  flex-direction: row;
 }
 
+/* Update content wrapper for mobile */
 .content-wrapper {
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* added for vertical centering */
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 2rem;
-  box-sizing: border-box;
+  transition: margin-left 0.3s ease;
   width: 100%;
+  box-sizing: border-box;
 }
+
+
+/* Themes */
+.app-container.green {
+  background-color: #d2f5d2;
+}
+.app-container.pink {
+  background-color: #fcd4e2;
+}
+.app-container.blue {
+  background-color: #d4eafc;
+}
+
 
 .main-content {
+  max-width: 800px;
   width: 100%;
-  max-width: 768px;
-  background-color: #cae8bd;
-  padding: 1rem;
+  background: #fff;
+  padding: 2rem;
   border-radius: 12px;
-  transition: background-color 0.3s ease-in-out;
-  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Typography */
 .main-content h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 0rem;
-  color: #3c5f41;
-  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .intro-text {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #3e5f3d;
-  line-height: 1;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #666;
   text-align: center;
 }
 
-/* Button */
-.restart-btn {
-  background-color: #3c5f41;
-  color: white;
-  border: none;
-  padding: 8px 16px;
+.score-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.score-item {
+  font-size: 1.1rem;
   font-weight: bold;
-  border-radius: 6px;
+  margin: 0.5rem 1rem 0.5rem 0;
+}
+
+.restart-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-  margin-bottom: 14px;
+  transition: background-color 0.3s ease;
 }
 
 .restart-btn:hover {
   background-color: #388e3c;
 }
 
-/* PINK THEME */
-.pink.app-container {
-  background: linear-gradient(to right, #ffe0f0, #fbd3e9);
-  color: #4d2a35;
-}
-.pink .main-content { background-color: #fbd3e9; }
-.pink .main-content h1 { color: #a4456f; }
-.pink .intro-text { color: #91345e; }
-.pink .restart-btn { background-color: #a4456f; }
-.pink .restart-btn:hover { background-color: #892d58; }
-
-/* BLUE THEME */
-.blue .app-container {
-  background: linear-gradient(to right, #e0f7ff, #d3effb);
-  color: #00335d;
-}
-.blue .main-content { background-color: #add8e6; }
-.blue .main-content h1,
-.blue .intro-text { color: #000B58; }
-.blue .restart-btn { background-color: #000B58; color: white; }
-.blue .restart-btn:hover { background-color: #3c4271; }
-
-/* RESPONSIVE STYLING */
+/* Responsive styles */
 @media screen and (max-width: 768px) {
   .content-wrapper {
     padding: 1rem;
-    align-items: flex-start; /* Ensures scrollability on very short screens */
+    align-items: flex-start;
   }
 
   .main-content {
     padding: 0.8rem;
+    max-width: 100%;
+    width: 100%;
   }
 
   .main-content h1 {
@@ -111,45 +112,31 @@ html, body {
 
   .score-container {
     flex-direction: column;
-    gap: 0.8rem;
-    padding: 0.8rem;
-    font-size: 0.95rem;
+    align-items: flex-start;
   }
 
   .score-item {
-    font-size: 1rem;
-    text-align: center;
+    margin-bottom: 0.5rem;
   }
 
   .restart-btn {
-    width: 100%;
-    margin-left: 0;
-    font-size: 0.95rem;
-    padding: 6px 12px;
+    margin-top: 1rem;
   }
 }
 
+
+
 @media screen and (max-width: 480px) {
   .main-content h1 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .intro-text {
     font-size: 0.9rem;
-  }
-
-  .score-container {
-    font-size: 0.9rem;
-    gap: 0.6rem;
-    padding: 0.6rem;
+    text-align: left;
   }
 
   .score-item {
-    font-size: 0.9rem;
-  }
-
-  .restart-btn {
-    font-size: 0.85rem;
-    padding: 5px 10px;
+    font-size: 1rem;
   }
 }
