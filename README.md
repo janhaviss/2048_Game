@@ -48,5 +48,5 @@ We built this together with love 💖
 📸 Screenshots
 | Desktop View                          | Mobile View                         | Tablet View        |     
 | ------------------------------------- | ----------------------------------- | -------------------|     
-| ![desktop](2048_game/src/assets/desktop.png) | ![mobile](2048_game/src/assets/mobile.png) | ![tablet](2048_game/src/assets/tablet.png)
+| ![desktop](2048_game/src/assets/desktop.png) | ![mobile](2048_game/src/assets/mobile.png) | ![tablet](2048_game/src/assets/tablet.png) |
 
