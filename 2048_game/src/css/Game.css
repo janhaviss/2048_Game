@@ -6,6 +6,8 @@
   padding: 1rem;
   box-sizing: border-box;
   width: 100%;
+  touch-action: none; /* Add this */
+  overflow: hidden; /* Add this */
 }
 
 .game-container {
@@ -14,11 +16,15 @@
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 340px;  /* ⬅️ slightly smaller for <360px devices */
+  max-width: 340px;
   box-sizing: border-box;
   margin: 0 auto;
   overflow-x: hidden;
+  touch-action: none; /* Changed from manipulation to none */
+  -webkit-user-select: none; /* Prevent text selection */
+  user-select: none; /* Prevent text selection */
 }
+
 .board {
   display: flex;
   flex-direction: column;
@@ -31,7 +37,6 @@
   gap: 8px;
 }
 
-
 .score-container {
   display: flex;
   justify-content: space-between;
@@ -43,10 +48,12 @@
   border-radius: 12px;
   border: 1px solid #3c5f41;
   background-color: #B0DB9C;
-  max-width: 600px; /* ⬅️ new: wide enough for all items */
+  max-width: 600px;
   width: 100%;
   box-sizing: border-box;
+  text-align: center;
 }
+
 .score-item {
   font-size: 1.2rem;
   font-weight: bold;
@@ -54,25 +61,12 @@
   text-align: center;
 }
 
-/* Style the restart button consistently */
 .score-container .restart-btn {
   margin-bottom: 0;
 }
 
-/* 
-.board {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+/* === THEMES === */
 
-.board-row {
-  display: flex;
-  gap: 8px;
-} */
-
-
-/* THEMED GAME ELEMENTS */
 .pink .game-container {
   background-color: #a4456f;
   color: #fff;
@@ -103,16 +97,16 @@
   color: #00103a;
 }
 
-/* Responsive */
+/* === RESPONSIVE STYLES === */
+
 @media screen and (max-width: 768px) {
   .game-container {
-    max-width: 90vw;
+    max-width: 100vw;
     padding: 1.2rem;
   }
 
   .score-container {
     gap: 1.2rem;
-
   }
 
   .score-item {
@@ -121,25 +115,22 @@
 }
 
 @media screen and (max-width: 480px) {
-   .score-container {
-    display: flex;
+  .score-container {
     flex-direction: column;
     gap: 0.6rem;
     align-items: center;
-    justify-content: center;
     padding: 0.8rem;
-    text-align: center; /* Ensures text alignment for smaller screens */
-    
+    max-width: 95vw;
   }
 
-.score-item {
-  font-size: 1rem;
-}
+  .score-item {
+    font-size: 1rem;
+  }
 
-.game-container {
-  padding: 0.8rem;
-  max-width: 95vw; /* Makes sure it doesn't overflow smaller phones */
-}
+  .game-container {
+    padding: 0.8rem;
+    max-width: 100vw;
+  }
 
   .board {
     gap: 6px;
@@ -160,11 +151,14 @@
     padding: 0.6rem;
     gap: 0.5rem;
   }
-
-  .tile {
-    width: 40px;
-    height: 40px;
-    font-size: 0.9rem;
-  }
 }
 
+/* Add these new rules for better touch handling */
+@media (hover: none) and (pointer: coarse) {
+  .game-wrapper {
+    -webkit-overflow-scrolling: touch;
+  }
+  html, body {
+    overscroll-behavior: none;
+  }
+}
