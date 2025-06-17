@@ -58,9 +58,6 @@
   transition: background-color 0.2s;
 }
 
-.resetbtn:hover {
-  background-color: #1f2a1a;
-}
 
 /* Toggle Switch (Smaller) */
 .toggle-switch {

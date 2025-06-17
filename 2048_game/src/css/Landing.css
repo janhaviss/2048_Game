@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh;
+  /* height: 100vh; */
   padding: 2rem;
   box-sizing: border-box;
   background: linear-gradient(to right, #ecfae5, #ddf6d2); /* match your theme */

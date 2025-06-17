@@ -43,7 +43,7 @@
   border-radius: 12px;
   border: 1px solid #3c5f41;
   background-color: #B0DB9C;
-  max-width: 500px; /* ⬅️ new: wide enough for all items */
+  max-width: 600px; /* ⬅️ new: wide enough for all items */
   width: 100%;
   box-sizing: border-box;
 }
@@ -112,6 +112,7 @@
 
   .score-container {
     gap: 1.2rem;
+
   }
 
   .score-item {
@@ -120,12 +121,16 @@
 }
 
 @media screen and (max-width: 480px) {
-  .score-container {
-  flex-direction: column;
-  gap: 0.6rem;
-  align-items: center;
-  padding: 0.8rem;
-}
+   .score-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem;
+    text-align: center; /* Ensures text alignment for smaller screens */
+    
+  }
 
 .score-item {
   font-size: 1rem;
