@@ -1,30 +1,48 @@
+/* Ensure no unwanted scrollbars */
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
   overflow-x: hidden;
+  width: 100%;
+  height: 100%;
 }
 
+/* Restrict app container */
 .app-container {
   display: flex;
-  height: 100vh;
-  background: linear-gradient(to right, #ecfae5, #ddf6d2);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #2e3d27;
+  min-height: 100vh;
+  max-width: 100vw;
   overflow: hidden;
+  flex-direction: row;
 }
 
+/* Update content wrapper for mobile */
 .content-wrapper {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  box-sizing: border-box;
+  transition: margin-left 0.3s ease;
   width: 100%;
+  box-sizing: border-box;
 }
 
+
+/* Themes */
+.app-container.green {
+  background-color: #d2f5d2;
+}
+.app-container.pink {
+  background-color: #fcd4e2;
+}
+.app-container.blue {
+  background-color: #d4eafc;
+}
+
+
 .main-content {
+  max-width: 800px;
   width: 100%;
   max-width: none;
   background: none;
@@ -40,10 +58,18 @@ html, body {
   border: none;
   padding: 8px 16px;
   font-weight: bold;
-  border-radius: 6px;
+  margin: 0.5rem 1rem 0.5rem 0;
+}
+
+.restart-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-  margin-bottom: 14px;
+  transition: background-color 0.3s ease;
 }
 
 .restart-btn:hover {
@@ -87,19 +113,45 @@ html, body {
 
   .main-content {
     padding: 0.8rem;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .main-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .score-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .score-item {
+    margin-bottom: 0.5rem;
   }
 
   .restart-btn {
-    width: 100%;
-    font-size: 0.95rem;
-    padding: 6px 12px;
-    margin-left: 0;
+    margin-top: 1rem;
   }
 }
 
+
+
 @media screen and (max-width: 480px) {
-  .restart-btn {
-    font-size: 0.85rem;
-    padding: 5px 10px;
+  .main-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .score-item {
+    font-size: 1rem;
   }
 }
