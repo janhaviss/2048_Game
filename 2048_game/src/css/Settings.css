@@ -4,19 +4,22 @@
   align-items: center;
   padding: 1rem;
   gap: 0.8rem;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
-/* Smaller Card Style */
+/* Smaller, more compact settings card */
 .settings-card {
   background: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 0.8rem 1rem;
   width: 100%;
-  max-width: 280px;
+  max-width: 300px;
   text-align: center;
+  font-size: 0.85rem;
   transition: transform 0.2s ease;
-  font-size: 0.9rem;
 }
 
 .settings-card:hover {
@@ -28,17 +31,17 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
 }
 
 .theme-btn {
-  width: 22px;
-  height: 22px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
   outline: none;
-  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  box-shadow: 0 0 1px rgba(0,0,0,0.2);
 }
 
 .theme-btn.green { background-color: #7dbf7d; }
@@ -46,26 +49,28 @@
 .theme-btn.blue { background-color: #87ceeb; }
 
 /* Buttons */
-.resetbtn {
-  margin-top: 0.6rem;
-  padding: 0.4rem 0.8rem;
-  font-size: 0.85rem;
-  background-color: #2e3d27;
-  color: white;
+.resetbtn,
+.hardmodebtn,
+.sound-toggle-btn button {
+  background-color: #aeb1ac;
+  color: black;
   border: none;
-  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
   border-radius: 5px;
-  transition: background-color 0.2s;
+  cursor: pointer;
+  margin: 0.4rem 0.2rem;
+  transition: background-color 0.2s ease;
 }
 
-
-/* Toggle Switch (Smaller) */
+/* Toggle Switch Compact */
 .toggle-switch {
   position: relative;
   display: inline-block;
-  width: 44px;
-  height: 24px;
-  margin-top: 0.8rem;
+  width: 40px;
+  height: 20px;
+  margin-top: 0.6rem;
 }
 
 .toggle-switch input {
@@ -76,23 +81,22 @@
 
 .slider {
   position: absolute;
-  cursor: pointer;
   inset: 0;
   background-color: #ccc;
-  border-radius: 24px;
-  transition: background-color 0.2s;
+  border-radius: 20px;
+  transition: 0.2s;
 }
 
 .slider::before {
   position: absolute;
   content: "";
-  height: 16px;
-  width: 16px;
-  left: 4px;
-  bottom: 4px;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
   background-color: white;
-  transition: 0.2s;
   border-radius: 50%;
+  transition: 0.2s;
 }
 
 .toggle-switch input:checked + .slider {
@@ -100,87 +104,81 @@
 }
 
 .toggle-switch input:checked + .slider::before {
-  transform: translateX(20px);
+  transform: translateX(18px);
 }
 
 .mode-label {
-  margin-top: 0.4rem;
-  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #444;
 }
 
-/* Responsive */
-@media (max-width: 500px) {
+.settingsDiv {
+  padding: 6px 12px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+button {
+  background-color: #aeb1ac;
+  color: black;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0.4rem 0.2rem;
+  transition: background-color 0.2s ease;
+}
+
+
+@media (max-width: 600px) {
+  .settings-container {
+    padding: 1rem 0.5rem;
+    height: 100vh;
+    overflow-y: auto;
+    justify-content: flex-start;
+  }
+
   .settings-card {
-    padding: 0.6rem 0.9rem;
-    max-width: 90%;
+    max-width: 100%;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .theme-circles {
+    gap: 8px;
   }
 
   .theme-btn {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
   }
 
-  .resetbtn {
-    font-size: 0.8rem;
+  .resetbtn,
+  .hardmodebtn,
+  .sound-toggle-btn {
+    font-size: 0.75rem;
+    padding: 5px 10px;
   }
 
   .toggle-switch {
-    width: 40px;
-    height: 22px;
+    width: 36px;
+    height: 18px;
   }
 
   .slider::before {
-    height: 14px;
-    width: 14px;
+    height: 12px;
+    width: 12px;
   }
 
   .mode-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
-}
-
-
-/* RESET BUTTON */
-.resetbtn{
-  background-color: #aeb1ac;
-  color: black;
-  border: none;
-  padding: 8px 16px;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-left: 12px;
-  transition: background-color 0.2s ease;
-  margin-bottom: 14px;
-}
-
-.settingsDiv{
-  padding: 8px 16px;
-  border: 1px solid black;
-}
-
-.hardmodebtn{
-  background-color: #fff;
-  color: black;
-  border: none;
-  padding: 8px 16px;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-left: 12px;
-  transition: background-color 0.2s ease;
-  margin-bottom: 14px;
-}
-
-/* SOUND SETTING BUTTON */
-button {
-  padding: 8px 12px;
-  background-color: #aeb1ac;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 0.5rem;
 }

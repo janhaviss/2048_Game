@@ -2,67 +2,90 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  justify-content: flex-start; /* Changed from center */
+  padding: 0.5rem;
   box-sizing: border-box;
   width: 100%;
-  touch-action: none; /* Add this */
-  overflow: hidden; /* Add this */
+  min-height: 100vh;
+  touch-action: none;
+  overflow: hidden;
 }
 
+/* Game Container - More responsive */
 .game-container {
   background-color: #3c5f41;
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 100%;
+  /* width: calc(100% - 1rem); Account for padding */
   max-width: 340px;
   box-sizing: border-box;
   margin: 0 auto;
-  overflow-x: hidden;
-  touch-action: none; /* Changed from manipulation to none */
-  -webkit-user-select: none; /* Prevent text selection */
-  user-select: none; /* Prevent text selection */
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
+/* Board - More compact tile spacing */
 .board {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
 }
 
 .board-row {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 5px;
 }
 
+/* Score Container - More compact layout */
 .score-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row; /* Aligns children in a row */
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #3c5f41;
+  background-color: #B0DB9C;
+  width: calc(100% - 1rem);
+  box-sizing: border-box;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 10px;
   margin: 0 auto 1rem;
   padding: 0.75rem 1rem;
   border-radius: 12px;
-  border: 1px solid #3c5f41;
-  background-color: #B0DB9C;
   max-width: 600px;
-  width: 100%;
   box-sizing: border-box;
   text-align: center;
 }
 
+
+
 .score-item {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #2e3d27;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0; 
+  flex-shrink: 1; 
 }
 
+
+/* Button adjustments */
 .score-container .restart-btn {
-  margin-bottom: 0;
+  width: auto; 
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  margin: 0;
+  background: #2e3d27; 
+  color: white;
+  border: none;
+  border-radius: 4px; 
+  cursor: pointer;
 }
 
 /* === THEMES === */
@@ -115,41 +138,57 @@
 }
 
 @media screen and (max-width: 480px) {
-  .score-container {
-    flex-direction: column;
-    gap: 0.6rem;
-    align-items: center;
-    padding: 0.8rem;
-    max-width: 95vw;
+  .game-wrapper {
+    padding: 0.25rem;
+    justify-content: flex-start;
   }
-
-  .score-item {
-    font-size: 1rem;
-  }
-
+  
   .game-container {
-    padding: 0.8rem;
-    max-width: 100vw;
+    padding: 0.5rem;
+    max-width: 100%;
+    border-radius: 8px;
   }
-
+  
+  .score-container {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    max-width: 100%;
+  }
+  
+  .score-item {
+    font-size: 0.9rem;
+  }
+  
   .board {
-    gap: 6px;
+    gap: 4px;
   }
-
+  
   .board-row {
-    gap: 6px;
+    gap: 4px;
+  }
+  
+  .score-container .restart-btn {
+    grid-column: span 1;
+    margin-top: 0.25rem;
   }
 }
 
 @media screen and (max-width: 360px) {
-  .game-container {
-    max-width: 320px;
-    padding: 0.5rem;
+  .score-item {
+    font-size: 0.8rem;
   }
-
-  .score-container {
-    padding: 0.6rem;
-    gap: 0.5rem;
+  
+  .game-container {
+    padding: 0.4rem;
+  }
+  
+  .board {
+    gap: 3px;
+  }
+  
+  .board-row {
+    gap: 3px;
   }
 }
 

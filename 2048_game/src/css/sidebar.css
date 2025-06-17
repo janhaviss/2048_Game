@@ -79,22 +79,13 @@
   }
 
   .content-wrapper {
-    margin-left: 80px; /* match collapsed width */
+    margin-left: 60px; /* match collapsed width */
   }
 
   .sidebar:not(.collapsed) + .content-wrapper {
     margin-left: 200px; /* full sidebar width */
   }
 }
-   /* I CHANGED THIS */
-
-/* .sidebar {
-  width: 240px;
-  transition: transform 0.3s ease;
-} */
-
-/* colro */
-/* PINK THEME */
 
 .pink .sidebar {
   background-color: #f8c8dc;
@@ -168,7 +159,7 @@
   cursor: pointer;
 }
 
-/* SWTACH BUTTONS */
+/* SWTACH BUTTONS
 .theme-circles {
   display: flex;
   gap: 12px;
@@ -201,7 +192,7 @@
 
 .theme-btn.blue {
   background-color: #000b58;
-}
+} */
 
 .score-container,
 .restart-btn,
@@ -221,6 +212,22 @@ input {
     width: 180px;
   }
 
+  .sidebar.collapsed {
+    width: 40px; 
+    padding: 1rem 0.25rem;
+  }
+  
+  .sidebar.collapsed .nav-icon {
+    font-size: 1rem;
+    margin: 0 auto; 
+  }
+  
+  .sidebar.collapsed .sidebar-header {
+    padding: 1rem 0.25rem;
+    justify-content: center;
+  }
+  
+  
   .content-wrapper {
     margin-left: 80px; /* match collapsed width */
   }

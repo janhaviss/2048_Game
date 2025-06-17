@@ -155,6 +155,9 @@ html, body {
   .score-item {
     font-size: 1rem;
   }
+  .content-wrapper {
+      margin-left: 50px;
+    }
 }
 
 @media (hover: none) and (pointer: coarse) {
