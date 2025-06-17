@@ -78,7 +78,13 @@ export default function App() {
                 soundEnabled={soundEnabled}
               />
 
-              {gameOver && <GameOver onRestart={handleRestart} />}
+    {gameOver && (
+      <GameOver 
+      onRestart={handleRestart} 
+      score={score} 
+      moves={moveCount} 
+      />
+      )}
             </>
           ) : activePage === 'howToPlay' ? (
             <HowToPlay />
